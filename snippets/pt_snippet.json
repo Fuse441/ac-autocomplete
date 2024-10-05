@@ -1,0 +1,17 @@
+{
+  "Protocol Snippet": {
+    "prefix": "pt",
+    "body": [
+      "{",
+      "  \"protocol\": \"HTTP\",",
+      "  \"url\": \"\",",
+      "  \"commandName\": \"\",",
+      "  \"channel\": \"API\",",
+      "  \"nodeName\": \"\",",
+      "  \"method\": \"POST\",",
+      "  \"redirectStep\": \"@TABLE.validateCommand.\"",
+      "}"
+    ],
+    "description": "Inserts a JSON block for PT"
+  }
+}

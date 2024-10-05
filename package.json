@@ -1,33 +1,56 @@
 {
   "name": "ac-autocomplete",
-  "displayName": "AC_AutoComplete",
-  "description": "Generator Format JSON for AC",
-  "version": "0.0.1",
+  "displayName": "AC AutoComplete",
+  "description": "An example VS Code extension for autocomplete",
+  "version": "1.0.0",
+  "publisher": "AC AutoComplete for Team Broker",
   "engines": {
-    "vscode": "^1.94.0"
+    "vscode": "^1.60.0"
   },
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onCommand:ac-autocomplete.helloWorld"
+  ],
   "main": "./extension.js",
   "contributes": {
-    "commands": [{
-      "command": "ac-autocomplete.helloWorld",
-      "title": "Hello World"
-    }]
-  },
-  "scripts": {
-    "lint": "eslint .",
-    "pretest": "npm run lint",
-    "test": "vscode-test"
-  },
-  "devDependencies": {
-    "@types/vscode": "^1.94.0",
-    "@types/mocha": "^10.0.8",
-    "@types/node": "20.x",
-    "eslint": "^9.11.1",
-    "@vscode/test-cli": "^0.0.10",
-    "@vscode/test-electron": "^2.4.1"
+    "snippets": [
+    {
+      "language": "json",  
+      "path": "snippets/vc_snippet.json"  
+    },
+    {
+      "language": "json",  
+      "path": "snippets/cm_snippet.json"  
+    },
+    {
+      "language": "json",  
+      "path": "snippets/cd_snippet.json"  
+    },
+  
+    {
+      "language": "json",  
+      "path": "snippets/pt_snippet.json"  
+    },
+    {
+      "language": "json",  
+      "path": "snippets/mr_snippet.json"  
+    },
+    {
+      "language": "json",  
+      "path": "snippets/rf_snippet.json"  
+    },
+    {
+      "language": "json",  
+      "path": "snippets/rs_snippet.json"  
+    }
+  ],
+    "commands": [
+      {
+        "command": "ac-autocomplete.helloWorld",
+        "title": "Hello World"
+      }
+    ]
   }
 }

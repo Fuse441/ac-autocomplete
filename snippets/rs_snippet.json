@@ -1,0 +1,15 @@
+{
+  "ResponseStatus Snippet": {
+    "prefix": "rs",
+    "body": [
+      "{",
+      "  \"${TM_FILENAME_BASE}\": {",
+      "    \"resultCode\": \"@VAR.resultCode\",",
+      "    \"status\": \"@VAR.status\",",
+      "    \"detail\": \"@VAR.resultDesc\"",
+      "  }",
+      "}"
+    ],
+    "description": "Inserts a JSON block for RS"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "CD Snippet": {
+    "prefix": "cd",
+    "body": [
+      "{",
+      "  \"${TM_FILENAME_BASE}\": {",
+      "    \"SommthingIf\": [",
+      "      {",
+      "        \"criteria\": {},",
+      "        \"redirectStep\": \"\"",
+      "      },",
+      "      {",
+      "        \"criteria\": {},",
+      "        \"redirectStep\": \"\"",
+      "      }",
+      "    ]",
+      "  }",
+      "}"
+    ],
+    "description": "Inserts a JSON block for CD"
+  }
+}

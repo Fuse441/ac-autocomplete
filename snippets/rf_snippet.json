@@ -1,0 +1,17 @@
+{
+  "ResponseFormat Snippet": {
+    "prefix": "rf",
+    "body": [
+      "{",
+      "  \"${TM_FILENAME_BASE}\": {",
+      "    \"channel\": \"API\",",
+      "    \"format\": \"application/json\",",
+      "    \"header\": {",
+      "    },",
+      "    \"body\": \"\"",
+      "  }",
+      "}"
+    ],
+    "description": "Inserts a JSON block for RF"
+  }
+}

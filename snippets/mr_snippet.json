@@ -1,0 +1,15 @@
+{
+  "MappingResponse Snippet": {
+    "prefix": "mr",
+    "body": [
+      "{",
+      "  \"${TM_FILENAME_BASE}\": {",
+      "    \"getStatus\": \"@TABLE.responseStatus.\",",
+      "    \"setFormat\": \"@TABLE.responseFormat.\",",
+      "    \"stat\": \"@STAT.\"",
+      "  }",
+      "}"
+    ],
+    "description": "Inserts a JSON block for MR"
+  }
+}
