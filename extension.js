@@ -1,5 +1,5 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
+// @ts-nocheck
+
 const vscode = require('vscode');
 
 // This method is called when your extension is activated
@@ -8,26 +8,59 @@ const vscode = require('vscode');
 /**
  * @param {vscode.ExtensionContext} context
  */
+
+
 function activate(context) {
+    const hoverProvider = vscode.languages.registerHoverProvider('json', {
+        provideHover(document, position) {
+            var Nesting = "";
+            const range = document.getWordRangeAtPosition(position, /"([^"]+)"\s*:/);
 
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "ac-autocomplete" is now active!');
+            if (!range) return;
 
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with  registerCommand
-	// The commandId parameter must match the command field in package.json
-	const disposable = vscode.commands.registerCommand('ac-autocomplete.helloWorld', function () {
-		// The code you place here will be executed every time your command is executed
+            const key = document.getText(range);
+            const jsonText = document.getText();
+            const jsonObj = JSON.parse(jsonText);
 
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from AC_AutoComplete!');
-	});
+            const nestedStructure = getNestedStructure(jsonObj, key);
+            console.log("Nesting Log: " + Nesting);
 
-	context.subscriptions.push(disposable);
+            return new vscode.Hover(`Nested structure: ${JSON.stringify(nestedStructure)}`);
+        }
+    });
+
+    context.subscriptions.push(hoverProvider);
 }
 
-// This method is called when your extension is deactivated
+function getNestedStructure(obj, targetKey, currentPath = '', NestingJSON = '') {
+    let didEnterLoop = false;
+
+    for (const [key, value] of Object.entries(obj)) {
+        console.log("start loop");
+        console.log(`Key: ${key}, Value: ${value}, Type: ${typeof value}`);
+        didEnterLoop = true;
+
+        if (typeof value === 'object') {
+            const newPath = currentPath ? `${currentPath}.${key}` : key;
+            console.log(`Descending into object: ${newPath}`);
+            
+            
+            NestingJSON = getNestedStructure(value, targetKey, newPath, NestingJSON);
+        }
+    }
+
+    if (!didEnterLoop) {
+        console.log("Descending into object Nest: " + currentPath);
+        console.log("Did not enter loop: No object properties found");
+        return currentPath; 
+    }
+
+    return NestingJSON; 
+}
+
+
+
+
 function deactivate() {}
 
 module.exports = {

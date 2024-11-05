@@ -2,7 +2,7 @@
   "name": "ac-autocomplete",
   "displayName": "AC AutoComplete",
   "description": "An example VS Code extension for autocomplete",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "AC AutoComplete for Team Broker",
   "engines": {
     "vscode": "^1.60.0"
@@ -11,10 +11,17 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:ac-autocomplete.helloWorld"
+    "onLanguage:json"
   ],
   "main": "./extension.js",
   "contributes": {
+    "languages": [
+      {
+        "id": "json",
+        "extensions": [".json"],
+        "aliases": ["JSON"]
+      }
+    ],
     "snippets": [
     {
       "language": "json",  
@@ -44,8 +51,11 @@
     {
       "language": "json",  
       "path": "snippets/rs_snippet.json"  
-    }
-  ],
+    },
+    {
+      "language": "json",  
+      "path": "snippets/ifElse.json"  
+    }  ],
     "commands": [
       {
         "command": "ac-autocomplete.helloWorld",

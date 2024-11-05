@@ -1,0 +1,17 @@
+{
+    "ifElse Snippet": {
+        "prefix": "if",
+        "body": [
+            "{",
+            "    \"variable\": {",
+            "    },",
+            "    \"criteria\": {",
+            "        \"action\": \"${1:custom}\",",
+            "        \"value\": \"${2}\"",
+            "    },",
+            "    \"redirectStep\": \"${3}\"",
+            "}"
+        ],
+        "description": "Inserts a JSON block for if else"
+    }
+}
