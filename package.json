@@ -3,7 +3,7 @@
   "displayName": "AC AutoComplete",
   "description": "An example VS Code extension for autocomplete",
   "version": "1.0.1",
-  "publisher": "AC AutoComplete for Team Broker",
+  "publisher": "Demon-APIM",
   "engines": {
     "vscode": "^1.60.0"
   },
